@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details</title>
+
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <h1>User Details</h1>
+
+    <input
+      id="search"
+      type="text"
+      placeholder="Search"
+      autocomplete="off"
+      required
+      maxlength="20"
+      minlength="3"
+      pattern="[a-zA-Z ]+"
+    />
+
+    <form action="http://127.0.0.1:8080/form-validation" method="post">
+      <p>
+        <label for="name">Name :</label>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          required
+          maxlength="20"
+          minlength="3"
+          pattern="[a-zA-Z ]+"
+        />
+      </p>
+      <p>
+        <label for="email">Email :</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          required
+          maxlength="20"
+          minlength="3"
+          pattern="[a-zA-Z ]+"
+        />
+      </p>
+      <p>
+        <label for="male">Gender :</label>
+        <input id="male" type="radio" name="gender" value="male" /> Male
+        <input id="female" type="radio" name="gender" value="female" /> Female
+      </p>
+      <p>
+        <label for="canVote">Can Vote :</label>
+        <input type="checkbox" name="canVote" id="canVote" value="true" />
+      </p>
+      <p>
+        <button id="submit">Submit</button>
+      </p>
+    </form>
+
+    <hr />
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Can Vote</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="userDetailTable">
+        <tr>
+          <td>Ram</td>
+          <td>ram@gmail.com</td>
+          <td>Male</td>
+          <td>YES</td>
+          <td>
+            <button>Edit</button>
+          </td>
+          <td><button>Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="main.js"></script>
+  </body>
+</html>

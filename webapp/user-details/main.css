@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  background-color: rgb(240, 240, 240);
+}
+
+h1 {
+  text-align: center;
+}
+
+#search {
+  margin-left: 85%;
+  padding: 10px;
+  border-radius: 33px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: center;
+}
