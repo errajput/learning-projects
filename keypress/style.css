@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  /* background-image: url(img/bag.webp); */
+}
+.bg {
+  background-image: url(img/bg.png);
+  background-color: rgb(22, 17, 13);
+  background-size: cover;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#key {
+  font-size: 5rem;
+  text-align: center;
+}
