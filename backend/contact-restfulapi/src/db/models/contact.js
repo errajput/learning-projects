@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
+const mongoose = require("mongoose");
+const validator = require("validator");
 
 const contactSchema = new mongoose.Schema({
   name: {
@@ -11,10 +11,10 @@ const contactSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: [true, 'Email id already present'],
+    unique: [true, "Email id already present"],
     validate(value) {
       if (validator.isEmail(value)) {
-        throw new Error('Invalid email');
+        throw new Error("Invalid email");
       }
     },
   },
@@ -33,5 +33,5 @@ const contactSchema = new mongoose.Schema({
 
 // new collection
 
-const Contact = new mongoose.model('Contact', contactSchema);
+const Contact = new mongoose.model("Contact", contactSchema);
 module.exports = Contact;
