@@ -13,25 +13,37 @@ const contactSchema = new mongoose.Schema({
     required: true,
     unique: [true, 'Email id already present'],
     validate(value) {
-      if (validator.isEmail(value)) {
+      const isEmail = validator.isEmail(value);
+      if (!isEmail) {
         throw new Error('Invalid email');
       }
     },
   },
   phone: {
-    type: Number,
-    min: 10,
-    max: 10,
+    type: String,
+    maxLength: 10,
     required: true,
     unique: true,
   },
-  address: {
-    type: String,
-    required: true,
-  },
 });
+
+const Contact = new mongoose.model('Contact', contactSchema);
+
+module.exports = Contact;
 
 // new collection
 
-const Contact = new mongoose.model('Contact', contactSchema);
-module.exports = Contact;
+const createDocument = async () => {
+  try {
+    const mongoContact = new Contact({
+      name: 'Contact',
+      phone: 199999990,
+      email: 'disha2@gmail.com',
+    });
+    const result = await Contact.insertMany([mongoContact]);
+    console.log(result);
+  } catch (e) {
+    console.log(e);
+  }
+};
+createDocument();

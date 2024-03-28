@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config({ path: 'development.env' });
 const app = express();
+const Contact = require('./models/contact');
 const port = process.env.PORT || 8000;
 
 mongoose
