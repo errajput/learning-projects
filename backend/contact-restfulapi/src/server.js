@@ -1,12 +1,11 @@
-const express = require('express');
-const mongoose = require('mongoose');
+import express from 'express';
+import { connect } from 'mongoose';
 require('dotenv').config({ path: 'development.env' });
 const app = express();
-const Contact = require('./models/contact');
+import Contact from './models/contact';
 const port = process.env.PORT || 8000;
 
-mongoose
-  .connect(process.env.MONGODB_URI, { dbName: 'test' })
+connect(process.env.MONGODB_URI, { dbName: 'test' })
   .then(() => {
     console.log('DB Connected');
   })
