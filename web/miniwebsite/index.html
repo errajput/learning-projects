@@ -4,29 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>college-site</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,700;1,600&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <nav class="header">
-      <a href="index.html"><img src="" alt="" /></a>
-      <div class="nav-links" id="navLinks">
-        <img src="img/clear.svg" alt="" class="fa" onclick="hideMenu()" />
-        <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Course</a></li>
-          <li><a href="">Blog</a></li>
-          <li><a href="">contact</a></li>
-        </ul>
-      </div>
-      <img src="img/list.svg" alt="" class="fa" onclick="showMenu()" />
-    </nav>
+    <div class="nav-container">
+      <nav>
+        <a class="brand" href="/">Apple - iPhone</a>
+        <div class="nav-links">
+          <div class="clear-container">
+            <img src="img/clear.svg" alt="Close Nav" class="fa fa-clear" />
+          </div>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Course</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </div>
+        <img src="img/list.svg" alt="Open Nav" class="fa fa-open" />
+      </nav>
+    </div>
     <div>
       <div class="text-box">
         <h1>welcome to vira college</h1>
@@ -78,13 +76,17 @@
       </div>
     </div>
     <script>
-      var navLinks = document.getElementById('navLinks');
-      function showMenu() {
-        navLinks.style.right = '0';
-      }
-      function hideMenu() {
-        navLinks.style.right = '-300px';
-      }
+      const [navLinks] = document.getElementsByClassName('nav-links');
+      const [navClose] = document.getElementsByClassName('fa-clear');
+      const [navOpen] = document.getElementsByClassName('fa-open');
+
+      navClose.addEventListener('click', () => {
+        navLinks.style.display = 'none';
+      });
+
+      navOpen.addEventListener('click', () => {
+        navLinks.style.display = 'initial';
+      });
     </script>
   </body>
 </html>
