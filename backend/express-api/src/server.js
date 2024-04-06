@@ -2,6 +2,7 @@ import { config } from 'dotenv';
 import { connect } from 'mongoose';
 import express from 'express';
 
+import AuthRoutes from './routes/auth.routes.js';
 import UserRoutes from './routes/user.routes.js';
 import TodoRoutes from './routes/todo.routes.js';
 
@@ -15,6 +16,7 @@ const main = async () => {
     const app = express();
 
     app.use(express.json());
+    app.use('/auth', AuthRoutes);
     app.use('/users', UserRoutes);
     app.use('/todos', TodoRoutes);
 
