@@ -10,8 +10,10 @@ const main = async () => {
   try {
     await connect(process.env.MONGODB_URI, { dbName: 'test' });
     console.log('DB Connected');
+
     const app = express();
 
+    app.use(express.json());
     app.use('/users', UserRoutes);
 
     const port = process.env.PORT || 8000;
