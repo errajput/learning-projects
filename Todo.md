@@ -7,3 +7,4 @@
 5. Which HTML Element to use when
 6. Website Structure
 7. display none vs visibility hidden
+8. IIFE (Immediately Invoked Function Expression)
