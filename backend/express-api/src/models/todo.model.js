@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Types } from 'mongoose';
 
 const TodoSchema = new Schema(
   {
@@ -16,6 +16,11 @@ const TodoSchema = new Schema(
     isDone: {
       type: Boolean,
       default: false,
+    },
+    createdBy: {
+      type: Types.ObjectId,
+      ref: 'User',
+      required: true,
     },
   },
   {

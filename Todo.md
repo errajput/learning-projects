@@ -9,3 +9,4 @@
 7. display none vs visibility hidden
 8. IIFE (Immediately Invoked Function Expression)
 9. Put vs Patch
+10. jwt token

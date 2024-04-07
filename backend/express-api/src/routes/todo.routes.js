@@ -1,13 +1,14 @@
 import { Router } from 'express';
 import TodoModel from '../models/todo.model.js';
+import { checkAuth } from '../utils.js';
 
 const router = Router();
 
 // Create
-router.post('/', async (req, res) => {
+router.post('/', checkAuth, async (req, res) => {
   try {
     const { title, description } = req.body;
-    const todo = TodoModel({ title, description });
+    const todo = TodoModel({ title, description, createdBy: req.userId });
 
     await todo.save();
 
@@ -19,16 +20,22 @@ router.post('/', async (req, res) => {
 });
 
 // Read
-router.get('/', async (req, res) => {
-  const todos = await TodoModel.find({}, '-__v');
+router.get('/', checkAuth, async (req, res) => {
+  const todos = await TodoModel.find(
+    { createdBy: req.userId },
+    '-__v -createdBy'
+  );
 
   return res.send({ data: todos });
 });
 
 // Read by id
-router.get('/:id', async (req, res) => {
+router.get('/:id', checkAuth, async (req, res) => {
   try {
-    const todo = await TodoModel.findOne({ _id: req.params.id }, '-__v');
+    const todo = await TodoModel.findOne(
+      { _id: req.params.id, createdBy: req.userId },
+      '-__v -createdBy'
+    );
 
     return res.send({ data: todo });
   } catch (error) {
@@ -38,11 +45,11 @@ router.get('/:id', async (req, res) => {
 });
 
 // Update by id
-router.patch('/:id', async (req, res) => {
+router.patch('/:id', checkAuth, async (req, res) => {
   try {
     const { title, description, isDone } = req.body;
     await TodoModel.updateOne(
-      { _id: req.params.id },
+      { _id: req.params.id, createdBy: req.userId },
       { title, description, isDone }
     );
 
@@ -54,9 +61,9 @@ router.patch('/:id', async (req, res) => {
 });
 
 // Delete by id
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', checkAuth, async (req, res) => {
   try {
-    await TodoModel.deleteOne({ _id: req.params.id });
+    await TodoModel.deleteOne({ _id: req.params.id, createdBy: req.userId });
 
     return res.send({ message: 'Todo Deleted' });
   } catch (error) {
