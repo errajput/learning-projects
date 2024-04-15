@@ -10,3 +10,6 @@
 8. IIFE (Immediately Invoked Function Expression)
 9. Put vs Patch
 10. jwt token
+11. refresh model
+12. props,dom,bendlar
+13. {\_\_}evaluate expression - final outcome
