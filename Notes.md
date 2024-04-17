@@ -107,3 +107,5 @@ git config --global user.email ""
 
 git push origin master
 ```
+
+virtual dom fiber and reconcillation
