@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Piazzolla:opsz,wght@8..30,200;8..30,300;8..30,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,700;1,600&display=swap");
+h1 {
+  color: blue;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Piazzolla", serif;
+}
+:root {
+  --main-bg: #1e272e;
+  --main-bg: #0097e6;
+}
+html {
+  font-size: 80.5%;
+}
+row {
+  margin: 0;
+}
+.main_menu {
+  background-color: var(--main-bg);
+}
+.navbar {
+  color: aliceblue;
+  background-color: var(--main-bg);
+}

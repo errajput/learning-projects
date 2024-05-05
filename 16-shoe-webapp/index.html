@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shopping web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <i class="bi bi-bag-heart-fill"></i>
+    <nav>
+      <div class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li class="dropdown">
+            <a href="about.html">About</a>
+            <div class="dropdown-content">
+              <a href="#">Girl shoes</a>
+              <a href="#">Man shoes</a>
+            </div>
+          </li>
+
+          <li><a href="">Image</a></li>
+          <li><a href="">Price</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="bg-img"></div>
+    <section class="p-1">
+      <h1 class="center">Welcome to our shoe shop</h1>
+      <div class="text-box">
+        <p>
+          A shoe is an item of footwear intended to protect and comfort the
+          human foot. Though the human foot can adapt to varied terrains and
+          climate conditions, it is vulnerable, and shoes provide protection.
+          Form was originally tied to function, but over time, shoes also became
+          fashion items.
+        </p>
+      </div>
+      <div>
+        <div class="center">
+          <button class="hero-btn" onclick="toggleParagraph()">
+            read more
+          </button>
+        </div>
+        <p class="hide">
+          Additionally, shoes have often evolved into many different designs,
+          such as high heels, which are most commonly worn by women during fancy
+          occasions. Contemporary footwear varies vastly in style, complexity
+          and cost. Basic sandals may consist of only a thin sole and simple
+          strap and be sold for a low cost. High fashion shoes made by famous
+          designers may be made of expensive materials, use complex construction
+          and sell for large sums of money. Some shoes are designed for specific
+          purposes, such as boots designed specifically for mountaineering or
+          skiing, while others have more generalized usage such as sneakers
+          which have transformed from a special purpose sport shoe into a
+          general use shoe.
+        </p>
+      </div>
+    </section>
+    <script>
+      const paragraphElement = document.querySelector('p.hide');
+      function toggleParagraph() {
+        // if (paragraphElement.classList.contains('hide')) {
+        //   paragraphElement.classList.remove('hide');
+        // } else {
+        //   paragraphElement.classList.add('hide');
+        // }
+        paragraphElement.classList.toggle('hide');
+      }
+    </script>
+  </body>
+</html>
