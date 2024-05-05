@@ -1,0 +1,23 @@
+.navbar {
+  background-color: rgb(87, 163, 245);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 1.6rem;
+  margin-left: 1rem;
+}
+
+.navbar ul {
+  margin-right: 2rem;
+  width: 15rem;
+  display: flex;
+  list-style-type: none;
+}
+
+.navbar ul li {
+  margin: 1rem;
+  font-size: 1.1rem;
+}
